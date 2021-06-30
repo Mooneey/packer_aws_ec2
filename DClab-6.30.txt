@@ -1,0 +1,31 @@
+docker verison = 5:19.03.15~3-0~ubuntu-bionic (미정이와 동일)
+docker compose = 1.29.2
+
+IAM - AmazonEC2FullAccess
+
+access-key, secretkey 나중에 환경변수로 돌려
+"aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+"aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+
+서울 우분투-18 (ami-0ba5cd124d7a79612)
+ssh_username을 ubuntu로 해야함
+
+"provisioners": [{
+        "type": "file",
+        "source": "docker.sh",
+        "destination": "./docker.sh"
+    }]
+이렇게 하면 docker.sh라는 파일이 생성된다
+
+
+"provisioners": [{
+        "type": "shell",
+        "inline": [
+          "apt-get update",
+          "apt-get install -y wget"
+        ]
+    }]
+이렇게 하면 이 명령어들이 실행됨
+
+
+packer build ./aws_docker.json - 패커 실행 명령어
