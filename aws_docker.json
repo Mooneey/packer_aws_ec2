@@ -1,8 +1,8 @@
 {
     "variables": {
         "name": "ubuntu-docker-ce-base",
-        "aws-access-key": "AKIAVMTXUGHOAYZLHP4C",
-        "aws-secret-key": "aBcQJw1YUN5R8loVESbs6EeFcTe17PPS30kdBXeK",
+        "aws-access-key": "Your Key",
+        "aws-secret-key": "Your Ke",
         "aws-region": "ap-northeast-2",
         "ami-name": "packer_ubuntu_18.04 {{timestamp}}",
         "ec2-instance-type": "t2.micro",
